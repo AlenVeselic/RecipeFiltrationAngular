@@ -1,0 +1,91 @@
+.card{
+    height: 95%;
+    display:flex;
+    flex-direction: column;
+    border:1px solid transparent;
+    border-radius: 20% 20% 0% 0%;
+    overflow:hidden;
+}
+
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: chartreuse;
+    justify-items: stretch;
+    flex: 1;
+
+    p{
+        margin: 0;
+        padding: 0;
+    }
+
+    :nth-child(2){
+            p{
+            text-align: right;
+        }
+    }
+    
+}
+
+.top{
+    min-height: 35%;
+}
+
+.time{
+        p{
+            display: block;
+            text-align: right;
+            position: absolute;
+            right: 15px;
+            background-color: green;
+        } 
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    
+    
+}
+
+.tags{
+    flex: 2;
+}
+.description{
+    flex: 4;
+    overflow:hidden;
+    p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+}
+.foot{
+    flex: 1;
+}
+div{
+    flex: auto;
+}
+
+
+div{
+    background-color: transparent;
+
+    div{
+
+        background-color:  orange;
+
+        div{
+            background-color: purple;
+
+            div{
+                background-color: yellow;
+            }
+        }
+    }
+
+}

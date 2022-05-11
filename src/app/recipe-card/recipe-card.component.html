@@ -1,0 +1,26 @@
+        <div class="time">
+            <p>
+                {{this.recipe.caspriprave}}
+            </p>
+        </div>
+<div class="card"
+    [routerLink]="['/recipe/' + this.recipe.idrecepta]">
+    <div class="top">
+        <img>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div>{{this.recipe.ime}}</div>
+            <div><p>{{this.recipe.zahtevnost.naziv}}</p></div>
+        </div>
+        <div class="tags">
+            Tags
+        </div>
+        <div class="description">
+            <p>{{this.recipe.opis}}</p>
+        </div>
+        <div class="foot">
+
+        </div>
+    </div>
+</div>
