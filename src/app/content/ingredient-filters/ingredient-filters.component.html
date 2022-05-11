@@ -1,0 +1,6 @@
+<mat-grid-list cols="5">
+    <p>Ingredients</p>
+    <mat-grid-tile *ngFor="let ingredient of this.ingredients">
+        <p (click)="setIngredientFilter(ingredient.ime); select($event)">{{ingredient.ime}}</p>
+    </mat-grid-tile>
+</mat-grid-list>
