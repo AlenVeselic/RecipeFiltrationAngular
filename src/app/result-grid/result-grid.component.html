@@ -1,0 +1,8 @@
+<mat-grid-list cols="4">
+    <mat-grid-tile *ngFor="let recipe of phpRecipes">
+        <app-recipe-card
+            [recipe]="recipe"
+        >
+        </app-recipe-card>   
+    </mat-grid-tile>
+</mat-grid-list>
