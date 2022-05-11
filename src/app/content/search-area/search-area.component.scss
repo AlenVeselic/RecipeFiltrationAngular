@@ -1,0 +1,21 @@
+@import "src\\styles.scss";
+
+.searchBar{
+    display: flex;
+    fle
+    button, input{
+        flex: 1;
+    }
+}
+
+.advancedFilters{
+    display: none;
+    flex-direction: column;
+    background-color: deeppink;
+
+    text-align: center;
+}
+
+app-preparation-type-filters, app-difficulty-level-filters{
+    flex:1;
+}
