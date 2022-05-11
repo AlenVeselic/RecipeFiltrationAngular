@@ -1,0 +1,19 @@
+@import "../styles.scss";
+
+.content{
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - #{$headerHeight} - #{$footerHeight});
+    font-family: Inter, "Helvetica Neue", sans-serif;
+
+
+
+    div{
+        width:50%;
+    }
+}
+
+footer{
+    height: $footerHeight;
+    background-color: $outerColor;
+}
