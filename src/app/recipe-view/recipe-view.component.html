@@ -1,0 +1,64 @@
+<p class="title">
+    {{this.recipe.ime}}   
+</p>
+<div class="horizontalContent">
+    <div class="leftSide">
+        <div class="background">
+            <div class="outerDiv">
+        
+            </div>
+        <div class="innerDiv">
+                <img>
+                <div class="description">
+                    <p>
+                        {{this.recipe.opis}}
+                    </p>
+                </div>
+        </div>
+
+        </div>
+    </div>
+    <div class="rightSide">
+        <div class="background">
+            <div class="row">
+                <div *ngIf="this.recipe.diets && this.recipe.diets.length > 0 && this.recipe.diets[0] != ''">
+                    Diets:
+                    <p *ngFor="let diet of this.recipe.diets">
+                        {{diet.ime}}
+                    </p>
+                </div>
+                <div>
+                    <p *ngIf="this.recipe.zahtevnost" class="difficulty" [class.difficultyOnly] = "!this.recipe.diets">
+                        {{this.recipe.zahtevnost.naziv}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    Prep types:
+                    <p *ngFor="let preparationType of recipe.priprave">
+                        {{preparationType.naziv}}
+                    </p>
+                </div>
+                <div class="time">
+                    <p>
+                        {{this.recipe.caspriprave}}min
+                    </p>
+                </div>
+            </div>
+            <div class="row column">
+                <p>Ingredients:</p>
+                <p *ngFor="let ingredient of recipe.sestavine">
+                    {{ingredient.pivot.kolicina}}{{ingredient.pivot.enota}} {{ingredient.ime}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="steps">
+    <p>Steps:</p>
+    <div [innerHtml] = "this.navodila"></div>
+</div>
+<div class="bottomPadding">
+
+</div>
