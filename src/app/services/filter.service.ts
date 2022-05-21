@@ -71,7 +71,7 @@ export class FilterService {
     let body: any = {}
     body.preparationTypes = this.preparationTypes.length > 0 ? this.preparationTypes : [""];
     body.ingredients = this.ingredients.length > 0 ? this.ingredients : [""];
-    body.difficultyLevel = this.difficultyLevel.length >0 ? this.difficultyLevel : [""];
+    body.difficultyLevel = this.difficultyLevel.length > 0 ? this.difficultyLevel : [""];
     body.query = this.query
     let recipes: any = {}
     console.log(body)
