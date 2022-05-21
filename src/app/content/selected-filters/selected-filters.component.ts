@@ -12,6 +12,10 @@ export class SelectedFiltersComponent implements OnInit {
   private filterSubscription: Subscription;
   activeFilters: any = []
   preparationTypes: any = null;
+  ingredients: any = null;
+  difficultyLevels: any = null;
+  query: any = null;
+
 
   constructor(private filterService: FilterService) {
     this.filterSubscription = this.filterService.getActiveFilterUpdate().subscribe( filters =>
@@ -25,6 +29,10 @@ export class SelectedFiltersComponent implements OnInit {
   ngOnInit(): void {
       console.log("Reinitialized")
       this.preparationTypes = this.activeFilters.preparationTypes
+      this.ingredients = this.activeFilters.ingredients
+      this.difficultyLevels = this.activeFilters.difficultyLevel
+      this.query = this.activeFilters.query
+
   }
 
 }
