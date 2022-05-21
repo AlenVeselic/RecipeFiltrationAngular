@@ -26,19 +26,21 @@ export class DifficultyLevelFiltersComponent implements OnInit {
 
   select(event: MouseEvent){
     const target = event.target as HTMLParagraphElement;
-    const lastSelected = document.getElementsByClassName("selected");
+    const lastSelected = document.querySelector(".difficultyOption.selected")
     let lastSelectedValue = ""
-    if(lastSelected.length > 0) lastSelectedValue = lastSelected[0].innerHTML;
+    if(lastSelected) lastSelectedValue = lastSelected.innerHTML;
     const difficultyOptions = document.getElementsByClassName("difficultyOption")
     for(const option of difficultyOptions){
         option.classList.remove('selected')
     }
-
-    if(event != null && event.target!= null && target.innerHTML != lastSelectedValue){
-      target.classList.add('selected');
-    } else {
-      target.classList.remove('selected');
+    if(target !== lastSelected){
+      if(event != null && event.target!= null && target.innerHTML != lastSelectedValue){
+        target.classList.add('selected');
+      } else {
+        target.classList.remove('selected');
+      }
     }
+    
   }
 
 }
