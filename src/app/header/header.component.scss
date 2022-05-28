@@ -6,43 +6,52 @@ header{
     background-color: $outerColor;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
-    p{
-        flex: 1;
-        margin: 0;
-        align-self: center;
-
-        text-align: center;
-        font-size: $headerTextSize;
-        font-family:'Playfair Display', serif;
-        color: white;
-        
-
-    }
-    div{
+    .inner{
         display: flex;
-        justify-content: center;
-        flex: 1;
-
-        button{
-            height: 39%;
-            width: 10%;
+        flex-direction: row;
+        width: $contentWidth + 7%;
+        margin-right: 60px;
+        p{
+            flex: 1;
+            margin: 0;
             align-self: center;
-
-            background: none;
+    
+            text-align: left;
+            font-size: $headerTextSize;
+            font-family:'Playfair Display', serif;
             color: white;
-            p{
-                font-family: 'Playfair Display', serif;
-                font-size:100%;
-            }
             
-            border: white solid 1px;
-            border-radius: 30px;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
-            outline: inherit;
+        }
+    
+        div{
+            display: flex;
+            justify-content:flex-end;
+            flex: 1;
+    
+            button{
+                height: 39%;
+                align-self: center;
+                overflow:hidden;
 
+                background: none;
+                color: white;
+                p{
+                    font-family: 'Playfair Display', serif;
+                    font-size:100%;
+                    padding-left: 8px;
+                    padding-right: 5px;
+                }
+                
+                border: white solid 1px;
+                border-radius: 30px;
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+    
+            }
         }
     }
 
