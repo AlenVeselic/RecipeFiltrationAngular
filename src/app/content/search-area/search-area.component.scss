@@ -2,10 +2,60 @@
 
 .searchBar{
     display: flex;
-    fle
+    height: 4vh;
+    padding: 10px 20px 12px 35px;
+    color: $darkRed;
+    font-weight: 400;
+    font-size: 20px;
     button, input{
+        all: unset;
         flex: 1;
     }
+
+    input[type=text]{
+        flex: 4;
+        text-align: left;
+        border-bottom: 2px solid $darkRed;
+
+    }
+
+    text-align: center;
+    .searchButton{
+        border-radius: 2vw;
+        margin-left: 5px;
+        width: 2vw;
+        height: 2vw;
+        flex: 0;
+        border: 2px solid $darkRed;
+
+        div{
+            width: 2vw;
+            height: 2vw;
+            padding-top: 3.5px;
+        }
+
+    }
+
+    button{
+        border: 2px solid $darkRed;
+        border-radius: 10px;
+    }
+
+    .extraOptions{
+        flex: 2;
+        margin-left: 40px;
+        display: flex;
+
+        button{
+            margin: 0 5px;
+            font-weight: 500; //We'll see if this weight looks good inverted, otherwise set to 600 I guess
+        }
+    }
+
+}
+
+::placeholder{
+    color: $darkRed;
 }
 
 .advancedFilters{
