@@ -16,6 +16,7 @@ import { SearchViewComponent } from './search-view/search-view.component';
 import { PreparationTypeFiltersComponent } from './content/preparation-type-filters/preparation-type-filters.component';
 import { DifficultyLevelFiltersComponent } from './content/difficulty-level-filters/difficulty-level-filters.component';
 import { IngredientFiltersComponent } from './content/ingredient-filters/ingredient-filters.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { IngredientFiltersComponent } from './content/ingredient-filters/ingredi
     AppRoutingModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
