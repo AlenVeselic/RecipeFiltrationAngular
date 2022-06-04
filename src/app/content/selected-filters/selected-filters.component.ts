@@ -26,7 +26,6 @@ export class SelectedFiltersComponent implements OnInit {
    }
 
   ngOnInit(): void {
-      console.log("Reinitialized")
       this.preparationTypes = this.activeFilters.preparationTypes
       this.ingredients = this.activeFilters.ingredients
       this.difficultyLevels = this.activeFilters.difficultyLevel
