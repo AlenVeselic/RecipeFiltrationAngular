@@ -16,7 +16,7 @@ export class FilterService {
 
   preparationTypes: string[] = [];
   ingredients: string[] = [];
-  difficultyLevel: string[] = [];
+  difficultyLevel: string[] = [""];
   query: string = ""
   private recipes = new Subject<any>()
   private activeFilters = new Subject<any>()
