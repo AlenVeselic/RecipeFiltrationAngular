@@ -16,6 +16,8 @@ export class SelectedFiltersComponent implements OnInit {
   difficultyLevels: any = null;
   query: any = null;
 
+  areAllFiltersEmpty: boolean = true;
+
   constructor(private filterService: FilterService) {
     this.filterSubscription = this.filterService.getActiveFilterUpdate().subscribe( filters =>
       {
@@ -30,6 +32,7 @@ export class SelectedFiltersComponent implements OnInit {
       this.ingredients = this.activeFilters.ingredients
       this.difficultyLevels = this.activeFilters.difficultyLevel
       this.query = this.activeFilters.query
+      this.areAllFiltersEmpty = this.filterService.areFiltersEmpty()
   }
 
 }

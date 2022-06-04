@@ -89,4 +89,21 @@ export class FilterService {
   getActiveFilterUpdate(): Observable<any>{
     return this.activeFilters.asObservable();
   }
+
+  areFiltersEmpty(): boolean{
+    if(this.preparationTypes.length > 0 && this.preparationTypes[0] != ""){
+      return false
+    }
+    if(this.ingredients.length > 0 && this.ingredients[0] != ""){
+      return false
+    }
+    if(this.difficultyLevel.length > 0 && this.difficultyLevel[0] != ""){
+      return false
+    }
+    if(this.query.length > 0 && this.query != ""){
+      return false
+    }
+    return true
+  }
+
 }

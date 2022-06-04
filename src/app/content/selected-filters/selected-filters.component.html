@@ -3,5 +3,6 @@
         <p *ngFor="let preparationType of this.preparationTypes">{{preparationType}}</p>
         <p *ngFor="let ingredient of this.ingredients">{{ingredient}}</p>
         <p *ngFor="let difficultyLevel of this.difficultyLevels">{{difficultyLevel}}</p>
+        <p *ngIf="this.areAllFiltersEmpty"> A new recipe is just around the corner </p>
     </div>
 </div>
