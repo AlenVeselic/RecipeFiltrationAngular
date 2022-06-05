@@ -1,10 +1,21 @@
+@import "../../styles.scss";
+
+div{
+    color: $backgroundColor;
+    flex: auto;
+}
+
 .card{
-    height: 95%;
+    height: 100%;
     display:flex;
     flex-direction: column;
+
     border:1px solid transparent;
     border-radius: 20% 20% 0% 0%;
+
     overflow:hidden;
+
+    background-color: $recipeCardRed;
 }
 
 
@@ -12,9 +23,15 @@
 .header{
     display: flex;
     flex-direction: row;
-    background-color: chartreuse;
     justify-items: stretch;
     flex: 1;
+
+    .name{
+        flex: 2;
+    }
+    .difficulty{
+        flex: 1;
+    }
 
     p{
         margin: 0;
@@ -30,16 +47,29 @@
 }
 
 .top{
-    min-height: 35%;
+    min-height: 40%;
 }
 
 .time{
+    display:flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 0px;
+
+    width: 4vh;
+    height: 4vh;
+    background-color: $recipeCardRed;
+    border: 2px solid $backgroundColor;
+    border-radius: 50%;
         p{
             display: block;
-            text-align: right;
-            position: absolute;
-            right: 15px;
-            background-color: green;
+            text-align: center;
+            
+            padding: 0;
+            margin:0;
+
+            background-color: $recipeCardRed;
         } 
 }
 
@@ -47,11 +77,14 @@
     display: flex;
     flex-direction: column;
     overflow:hidden;
+    padding: 5px 10px;
     
+    border-top: 1px solid $backgroundColor;
     
 }
 
 .tags{
+    margin-top: 5px;
     flex: 2;
 }
 .description{
@@ -66,26 +99,4 @@
 }
 .foot{
     flex: 1;
-}
-div{
-    flex: auto;
-}
-
-
-div{
-    background-color: transparent;
-
-    div{
-
-        background-color:  orange;
-
-        div{
-            background-color: purple;
-
-            div{
-                background-color: yellow;
-            }
-        }
-    }
-
 }

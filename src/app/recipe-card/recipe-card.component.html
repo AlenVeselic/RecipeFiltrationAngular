@@ -1,8 +1,8 @@
-        <div class="time">
-            <p>
-                {{this.recipe.caspriprave}}
-            </p>
-        </div>
+<div class="time">
+    <p>
+        {{this.recipe.caspriprave}}
+    </p>
+</div>
 <div class="card"
     [routerLink]="['/recipe/' + this.recipe.idrecepta]">
     <div class="top">
@@ -10,8 +10,8 @@
     </div>
     <div class="content">
         <div class="header">
-            <div>{{this.recipe.ime}}</div>
-            <div><p>{{this.recipe.zahtevnost.naziv}}</p></div>
+            <div class="name">{{this.recipe.ime}}</div>
+            <div class="difficulty"><p>{{this.recipe.zahtevnost.naziv}}</p></div>
         </div>
         <div class="tags">
             Tags
