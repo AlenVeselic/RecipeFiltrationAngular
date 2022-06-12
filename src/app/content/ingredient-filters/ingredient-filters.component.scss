@@ -1,5 +1,11 @@
+@import '../../../styles.scss';
+
 div{
     overflow: hidden;
+}
+
+.ingredientFiltersWrapper{
+    margin: 0 3vw;
 }
 
 .ingredientGridWrapper{
@@ -8,6 +14,22 @@ div{
     overflow-y: scroll;
 }
 
+.ingredientGridWrapper::-webkit-scrollbar {
+    width: 11px;
+  }
+  .ingredientGridWrapper{
+    scrollbar-width: thin;
+    scrollbar-color:$darkRed;
+  }
+  .ingredientGridWrapper::-webkit-scrollbar-track {
+    border-top: 1px solid $darkRed;
+    border-bottom: 1px solid $darkRed;
+  }
+  .ingredientGridWrapper::-webkit-scrollbar-thumb {
+    background-color: $backgroundColor ;
+    border-radius: 4px;
+    border: 2px solid $darkRed;
+  }
 mat-grid-tile{
     height:min-content;
     display:block;

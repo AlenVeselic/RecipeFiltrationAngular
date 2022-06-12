@@ -1,4 +1,6 @@
 <div>
-    <p>Preparation Types</p>
-    <p (click)="setPreparationType(prepType.naziv); select($event)"*ngFor="let prepType of this.preparationTypes">{{prepType.naziv}}</p>
+    <p class="filterTitle">Preparation Types</p>
+    <div class="preparationOptions">
+        <p (click)="setPreparationType(prepType.naziv); select($event)"*ngFor="let prepType of this.preparationTypes">{{prepType.naziv}}</p>
+    </div>
 </div>

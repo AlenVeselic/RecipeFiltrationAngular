@@ -1,4 +1,10 @@
 <div>
-    <p> Difficulty Levels </p>
-    <p (click)="setDifficultyLevel(difficultyLevel.naziv); select($event)" *ngFor="let difficultyLevel of this.difficultyLevels" class="difficultyOption">{{difficultyLevel.naziv}}</p>
+    <p class="filterTitle">Difficulty Levels</p>
+    
+    <p 
+        (click)="setDifficultyLevel(difficultyLevel.naziv); select($event)"
+        *ngFor="let difficultyLevel of this.difficultyLevels"
+        class="difficultyOption">
+            {{difficultyLevel.naziv}}
+    </p>
 </div>
