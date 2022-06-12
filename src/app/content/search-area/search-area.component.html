@@ -1,19 +1,21 @@
-<div class="searchBar">
-    <input type="text" placeholder="search anything">
+<div class="searchWrapper">
+    <div class="searchBar">
+        <input type="text" placeholder="search anything">
 
-    <button class="searchButton"><div><fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1"></fa-icon></div></button>
+        <button class="searchButton"><div><fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1"></fa-icon></div></button>
 
-    <div class="extraOptions">
-        <button>Sort by</button>
+        <div class="extraOptions">
+            <button>Sort by</button>
 
-        <button (click)="toggleAdvancedFilters()">Advanced</button>
+            <button (click)="toggleAdvancedFilters()">Advanced</button>
+        </div>
     </div>
-</div>
 
-<div class="advancedFilters" [class.flex] = "this.filters">
-    <div class="flex">
-        <app-preparation-type-filters></app-preparation-type-filters>
-        <app-difficulty-level-filters></app-difficulty-level-filters>
+    <div class="advancedFilters" [class.flex] = "this.filters">
+        <div class="flex topFilters">
+            <app-preparation-type-filters></app-preparation-type-filters>
+            <app-difficulty-level-filters></app-difficulty-level-filters>
+        </div>
+        <app-ingredient-filters></app-ingredient-filters>
     </div>
-    <app-ingredient-filters></app-ingredient-filters>
 </div>

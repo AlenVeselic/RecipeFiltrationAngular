@@ -1,9 +1,12 @@
 @import "src\\styles.scss";
 
+.searchWrapper{
+    padding: 10px 20px 12px 35px;
+}
+
 .searchBar{
     display: flex;
     height: 4vh;
-    padding: 10px 20px 12px 35px;
     color: $darkRed;
     font-weight: 400;
     font-size: 20px;
@@ -61,11 +64,29 @@
 .advancedFilters{
     display: none;
     flex-direction: column;
-    background-color: deeppink;
+    margin-top: 2vh;
+
+    background-color: $backgroundColor;
 
     text-align: center;
+    color: $darkRed;
+    .filterTitle{
+        border-bottom: 2px solid $darkRed;
+    }
+}
+
+.topFilters{
+    margin: 0 6vw;
+    justify-content: space-evenly;
 }
 
 app-preparation-type-filters, app-difficulty-level-filters{
-    flex:1;
+    flex: 1;
+}
+
+app-preparation-type-filters{
+    margin-right: 3vw;
+}
+app-difficulty-level-filters{
+    margin-left: 3vw;
 }
