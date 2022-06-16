@@ -9,11 +9,105 @@
     margin-top: 3%;
     color:#8F130D;
 }
+img{
+    height: 22.5vw;
+    width: 22.5vw;
+}
 
+.horizontalGrid{
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr 10fr;
+
+    column-gap: 10px;
+
+    .nameContainer{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        .name{
+            grid-column: 2;
+        }
+    }
+    .rightContentContainer{
+        display:grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 2;
+        background-color: $darkRed;
+        .rightContent{
+            grid-column: 1;
+            .row{
+                display: flex;
+                &.column{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                div{
+                    display: flex;
+                    flex: 1;
+                    p.difficulty{
+                        display:block;
+                        flex: 1;
+                        text-align: left;
+                        &.difficultyOnly{
+                            text-align: center;
+                        }
+                    }
+            }
+            .time{
+                display: flex;
+                flex: 1;
+                p{
+                    display:block;
+                    flex: 1;
+                    text-align: right;
+                }
+                
+            }
+            
+            }
+            
+        }
+    }
+    .rightSpace{
+        grid-column: 3 / span 2;
+        grid-row: 3;
+    }
+    .leftContentContainer{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-column: 1 / span 2;
+        grid-row: 2  / span 2;
+        background-color: $darkRed;
+        .leftContent{
+            grid-column: 2;
+        }
+    }
+
+    .steps{
+        grid-column: 2 /span 2;
+        grid-row: 4;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div{
+            width: 90%;
+        }
+        }
+
+}
+/*
 .horizontalContent{
     display:flex;
     color: #FFA8A3;
     position: relative;
+
+    width: 100vw;
+    left: 0;
 
     .background{
         position: relative;
@@ -29,10 +123,10 @@
         .background{
             display: flex;
             
-            padding-top: calc(#{$topPadding});
-            padding-right: calc(#{$sidePadding});
+            padding-top: calc);
+            padding-right: calc();
             left: -50%;
-            width: 50vw;
+            width: 55vw;
 
            div.outerDiv{
                 flex:3;
@@ -52,51 +146,10 @@
     .rightSide{
         position:absolute;
         .background{
-            left: 57%;
+            left: 55%;
             top: -4vh;
-            width: 47.3vw;
-            .row{
-                display: flex;
-                &.column{
-                    flex-direction: column;
-                    text-align: center;
-                }
-                div{
-                    display: flex;
-                    flex: 1;
-                    p.difficulty{
-                        display:block;
-                        flex: 1;
-                        text-align: left;
-                        &.difficultyOnly{
-                            text-align: center;
-                        }
-                    }
-            }
-
-            }
-        
-           
-
+            width: 54.5vw;
         }
-        .time{
-            display: flex;
-            flex: 1;
-            p{
-                display:block;
-                flex: 1;
-                text-align: right;
-            }
-            
-        }
-    }
-
-
-
-
-    img{
-        height: 22.5vw;
-        width: 22.5vw;
     }
 }
 
@@ -108,4 +161,4 @@
 .bottomPadding{
     height: 50vh;
     width: 10%;
-}
+}*/
