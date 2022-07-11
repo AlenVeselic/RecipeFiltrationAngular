@@ -12,6 +12,7 @@ export class RecipeViewComponent implements OnInit {
   recipeId:any = {}
   recipe:any = {}
   navodila: string = ""
+  difficultyRange: number[] = Array(4).fill(0).map((x,i) => 3 - i)
 
   constructor(private route: ActivatedRoute,
               private http: HttpClient) { }

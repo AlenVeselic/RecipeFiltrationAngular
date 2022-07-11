@@ -1,30 +1,39 @@
 @import "../../styles.scss";
-
-
-
 .title{
 
     font-size: $headerTextSize;
     font-family: 'Playfair Display', serif;
+    line-height: $headerTextSize;
     margin-top: 3%;
     color:#8F130D;
 }
+
+.attributeTitle{
+    border-bottom: 1px solid $backgroundColor;
+}
+
 img{
-    height: 22.5vw;
-    width: 22.5vw;
+     max-width: 100%;
+    // max-height: 480px;
+    // width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .horizontalGrid{
+    font-family:$baseFont;
     display: grid;
     margin-top: 10px;
     grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-rows: 1fr 8fr 1fr 10fr;
 
+    color: #FFA8A3;
+
     column-gap: 10px;
 
     .nameContainer{
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1.5fr;
         grid-column: 1 / span 2;
         grid-row: 1;
         .name{
@@ -34,11 +43,15 @@ img{
     .rightContentContainer{
         display:grid;
         grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 0.5fr 4fr;
         grid-column: 3 / span 2;
         grid-row: 1 / span 2;
         background-color: $darkRed;
         .rightContent{
             grid-column: 1;
+
+            margin-left: 1.5%;
+
             .row{
                 display: flex;
                 &.column{
@@ -48,22 +61,46 @@ img{
                 div{
                     display: flex;
                     flex: 1;
-                    p.difficulty{
-                        display:block;
+                    .difficulty{
+                        display:flex;
                         flex: 1;
                         text-align: left;
+                        justify-content: center;
                         &.difficultyOnly{
                             text-align: center;
                         }
                     }
             }
+            .star-empty::before{
+                content:'\2605';
+            
+                color:$backgroundColor;
+            }
+            
+            .star-full::before{
+                content:'\2606';
+            
+                color:$backgroundColor;
+            }
+            
+            .star-empty, .star-full{
+                display:inline;
+                flex: 1;
+                height:40px;
+                max-width: 50px;
+                font-size: 50px;
+                line-height: 40px;
+                text-align: center;
+            }
             .time{
                 display: flex;
                 flex: 1;
+                text-align: center;
                 p{
                     display:block;
                     flex: 1;
-                    text-align: right;
+                    padding: 0;
+                    margin: 0;
                 }
                 
             }
@@ -81,9 +118,25 @@ img{
         grid-template-columns: 1fr 1.5fr;
         grid-column: 1 / span 2;
         grid-row: 2  / span 2;
+
         background-color: $darkRed;
         .leftContent{
             grid-column: 2;
+
+            margin-top: 4%;
+            margin-right: 1.5%;
+            display: flex;
+            flex-direction: column;
+
+            .imageContainer{
+                flex: 5;
+            }
+            .description{
+                flex: 1;
+                margin-top: 3%;
+                margin-bottom: 1%;
+            }
+
         }
     }
 
@@ -94,71 +147,18 @@ img{
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        margin-top: 5%;
+        color:#8F130D;
+
         div{
             width: 90%;
         }
         }
 
 }
-/*
-.horizontalContent{
-    display:flex;
-    color: #FFA8A3;
-    position: relative;
-
-    width: 100vw;
-    left: 0;
-
-    .background{
-        position: relative;
-
-        background-color: #8F130D;
-        z-index: -10;
-    }
-
-    .leftSide{
-        $sidePadding: 3%;
-        $topPadding: 2.5%;
-
-        .background{
-            display: flex;
-            
-            padding-top: calc);
-            padding-right: calc();
-            left: -50%;
-            width: 55vw;
-
-           div.outerDiv{
-                flex:3;
-            }
-            div.innerDiv{
-                display: flex;
-                flex-direction: column;
-                flex:1;
-                .description{
-                    display: flex;
-                    align-items: flex-end;
-                }
-            }
-        }
-    }
-
-    .rightSide{
-        position:absolute;
-        .background{
-            left: 55%;
-            top: -4vh;
-            width: 54.5vw;
-        }
-    }
-}
-
-.steps{
-    margin-top: 5%;
-    color:#8F130D;
-}
 
 .bottomPadding{
-    height: 50vh;
+    height: 25vh;
     width: 10%;
-}*/
+}
