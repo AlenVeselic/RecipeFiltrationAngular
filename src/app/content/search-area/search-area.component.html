@@ -1,8 +1,8 @@
 <div class="searchWrapper">
     <div class="searchBar">
-        <input type="text" placeholder="search anything">
+        <input type="text" placeholder="search anything" #searchBar>
 
-        <button class="searchButton"><div><fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1"></fa-icon></div></button>
+        <button class="searchButton"><div><fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1" (click)="setQuery(searchBar.value)"></fa-icon></div></button>
 
         <div class="extraOptions">
             <button>Sort by</button>

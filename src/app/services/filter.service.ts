@@ -6,7 +6,7 @@ export enum filterTypes {
   preparationType,
   ingredient,
   difficultyLevel,
-  query
+  searchQuery
 }
 
 @Injectable({
@@ -17,7 +17,7 @@ export class FilterService {
   preparationTypes: string[] = [];
   ingredients: string[] = [];
   difficultyLevel: string[] = [""];
-  query: string = ""
+  searchQuery: string = ""
   private recipes = new Subject<any>()
   private activeFilters = new Subject<any>()
 
@@ -59,8 +59,8 @@ export class FilterService {
       }
         break;
       }
-      case filterTypes.query:{
-        this.query = filterValue;
+      case filterTypes.searchQuery:{
+        this.searchQuery = filterValue;
         break;
       }
     }
@@ -72,7 +72,7 @@ export class FilterService {
     body.preparationTypes = this.preparationTypes.length > 0 ? this.preparationTypes : [""];
     body.ingredients = this.ingredients.length > 0 ? this.ingredients : [""];
     body.difficultyLevel = this.difficultyLevel.length > 0 ? this.difficultyLevel : [""];
-    body.query = this.query
+    body.searchQuery = this.searchQuery
     let recipes: any = {}
     console.log(body)
     this.activeFilters.next(body);
@@ -100,7 +100,7 @@ export class FilterService {
     if(this.difficultyLevel.length > 0 && this.difficultyLevel[0] != ""){
       return false
     }
-    if(this.query.length > 0 && this.query != ""){
+    if(this.searchQuery.length > 0 && this.searchQuery != ""){
       return false
     }
     return true
