@@ -45,6 +45,8 @@ $backgroundColor: #FFA8A3;
 $darkRed: #8F130D;
 $recipeCardRed: #B52D26;
 
+$baseFont:"Inter", "Helvetica Neue", sans-serif;
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
@@ -61,7 +63,7 @@ html, body { height: 100%; }
 
   
 body { margin: 0;
-   font-family: "Inter", "Helvetica Neue", sans-serif;
+   font-family: $baseFont;
    background-color: $backgroundColor; }
 
 div.mat-grid-tile-content{
@@ -82,4 +84,12 @@ div.flex{
 
 .filterTitle{
   border-bottom: 2px solid $darkRed;
+}
+
+.t-center{
+  text-align: center;
+}
+
+.t-right{
+  text-align: right;
 }
