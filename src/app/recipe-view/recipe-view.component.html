@@ -12,7 +12,7 @@
             <div></div>
             <div class="leftContent">
                 <div class="imageContainer">
-                    <img src="../../assets/60641898.jpg">
+                    <img src={{this.recipe.localImageLocation}}>
                 </div>
                 <div class="description">
                     <p>
@@ -44,15 +44,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div *ngIf="recipe.priprave.length < 2 && recipe.priprave[0] == ''">
-                        Prep types:
-                        <p *ngFor="let preparationType of recipe.priprave">
-                            {{preparationType.naziv}}
+                    <div *ngIf="!recipe.priprave || recipe.priprave.length >= 1 && !(recipe.priprave[0].naziv === '')">
+                        Prep types: &nbsp;
+                        <p *ngFor="let preparationType of recipe.priprave; last as isLast">
+                            {{preparationType.naziv}}<span *ngIf="!isLast">, </span> &nbsp;
                         </p>
                     </div>
                     <div class="time">
-                        <p [class.t-center]="!(recipe.priprave.length < 2 && recipe.priprave[0] == '')" 
-                        [class.t-right] = "recipe.priprave.length < 2 && recipe.priprave[0] == ''"
+                        <p [class.t-center]="!recipe.priprave || recipe.priprave.length <= 1 && recipe.priprave[0].naziv === ''" 
+                        [class.t-right] = "recipe.priprave && recipe.priprave.length >= 1 && recipe.priprave[0].naziv != ''"
                         >
                             {{this.recipe.caspriprave}}min
                         </p>
