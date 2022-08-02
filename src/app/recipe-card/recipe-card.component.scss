@@ -94,6 +94,11 @@ img{
 .tags{
     margin-top: 5px;
     flex: 2;
+    display: flex;
+    span{
+        flex: 1;
+        text-align: center;
+    }
 }
 .description{
     flex: 4;

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { FilterService } from '../services/filter.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -12,10 +11,23 @@ export class RecipeCardComponent implements OnInit {
 
   @Input() recipe: any = {};
 
-  constructor(private router: Router) { 
+  displayedPreparationType = "";
+  displayedIngredient = "";
+
+  constructor(private router: Router,
+              private filterService: FilterService) { 
   }
 
   ngOnInit(): void {
-    console.log(this.recipe)
+    this.displayedPreparationType =  this.getDisplayedItem(this.recipe.priprave, "naziv", this.filterService.preparationTypes)
+    this.displayedIngredient = this.getDisplayedItem(this.recipe.sestavine, "ime", this.filterService.ingredients) 
+  }
+
+  getDisplayedItem(itemArray: Array<any>, itemAttributeName: string, selectedFilterArray: Array<String>){
+    for(const item of itemArray){
+      console.log(item[itemAttributeName])
+      if(selectedFilterArray.includes(item[itemAttributeName])) return item[itemAttributeName]
+    }
+    return itemArray[0][itemAttributeName]
   }
 }
