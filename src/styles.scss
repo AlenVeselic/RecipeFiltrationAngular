@@ -79,7 +79,10 @@ div.flex{
 }
 
 .selected{
-  background-color: rgb(236, 148, 195);
+  background-color: $darkRed;
+  color: $contentTextColor;
+  border: 1px transparent solid;
+  border-radius: 100px;
 }
 
 .filterTitle{

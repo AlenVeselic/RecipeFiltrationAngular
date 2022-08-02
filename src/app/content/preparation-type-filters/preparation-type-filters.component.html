@@ -1,6 +1,6 @@
 <div>
     <p class="filterTitle">Preparation Types</p>
     <div class="preparationOptions">
-        <p (click)="setPreparationType(prepType.naziv); select($event)" *ngFor="let prepType of this.preparationTypes">{{prepType.naziv}}</p>
+        <p (click)="setPreparationType(prepType.naziv); select($event)" *ngFor="let prepType of this.preparationTypes" [class.selected]="this.filterService.preparationTypes.includes(prepType.naziv)">{{prepType.naziv}}</p>
     </div>
 </div>

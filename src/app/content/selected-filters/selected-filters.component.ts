@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { combineLatest, concat, forkJoin, merge, Observable, Subscription } from 'rxjs';
 import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
@@ -15,6 +15,8 @@ export class SelectedFiltersComponent implements OnInit {
   ingredients: any = null;
   difficultyLevels: any = null;
   query: any = null;
+  selectedFilters: Observable<unknown> | undefined;
+  displayedSelectedFilters: string = '[]';
 
   areAllFiltersEmpty: boolean = true;
 
@@ -31,8 +33,14 @@ export class SelectedFiltersComponent implements OnInit {
       this.preparationTypes = this.activeFilters.preparationTypes
       this.ingredients = this.activeFilters.ingredients
       this.difficultyLevels = this.activeFilters.difficultyLevel
-      this.query = this.activeFilters.query
+      this.query = this.activeFilters.searchQuery
       this.areAllFiltersEmpty = this.filterService.areFiltersEmpty()
+      this.displayedSelectedFilters = [this.preparationTypes, this.ingredients, this.difficultyLevels, this.query]
+      .filter(array => array)
+      .filter(array => array.length > 0)
+      .filter(array => array != '')
+      .map(array =>{ if(Array.isArray(array)) return array.join(", "); else return array})
+      .join(", ")
   }
 
 }

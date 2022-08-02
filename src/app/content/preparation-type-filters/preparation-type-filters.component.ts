@@ -12,7 +12,7 @@ export class PreparationTypeFiltersComponent implements OnInit {
   selected: number[] =  [];
 
   constructor(private http: HttpClient,
-              private filterService: FilterService) { }
+              public filterService: FilterService) {}
 
   ngOnInit(): void {
     this.http.get("http://localhost:8000/api/v1/preparation-types").subscribe(p => {

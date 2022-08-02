@@ -6,7 +6,7 @@
             cols="5"
             >
             <mat-grid-tile *ngFor="let ingredient of this.ingredients">
-                <p (click)="setIngredientFilter(ingredient.ime); select($event)">{{ingredient.ime}}</p>
+                <p (click)="setIngredientFilter(ingredient.ime); select($event)" [class.selected]="this.filterService.ingredients.includes(ingredient.ime)">{{ingredient.ime}}</p>
             </mat-grid-tile>
         </mat-grid-list>
     </div>

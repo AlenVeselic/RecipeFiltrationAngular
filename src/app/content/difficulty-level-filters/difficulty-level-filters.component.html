@@ -4,7 +4,7 @@
     <p 
         (click)="setDifficultyLevel(difficultyLevel.naziv); select($event)"
         *ngFor="let difficultyLevel of this.difficultyLevels"
-        class="difficultyOption">
+        class="difficultyOption" [class.selected]="this.filterService.difficultyLevel[0] === difficultyLevel.naziv">
             {{difficultyLevel.naziv}}
     </p>
 </div>
