@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { RecipeViewComponent } from './recipe-view/recipe-view.component';
 import { SearchViewComponent } from './search-view/search-view.component';
 
