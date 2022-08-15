@@ -46,4 +46,5 @@ Thumbs.db
 
 .env
 /src/assets/
-src/assets/60641898.jpg
+
+/src/app/environment/environment.ts
