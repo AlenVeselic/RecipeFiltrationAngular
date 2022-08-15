@@ -6,35 +6,61 @@
 
 .searchBar{
     display: flex;
-    height: 4vh;
+    height: 5vh;
     color: $darkRed;
     font-weight: 400;
     font-size: 20px;
-    button, input{
-        all: unset;
+    @media (max-width:855px){
+        flex-direction: column;
+        height: 10vh;
+        @media (max-width:400px){
+            height: 12vh;
+        }
+    }
+    button,input{
         flex: 1;
     }
-
+    div{
+        display: flex;
+        margin-bottom: 10px;
+        flex: 3;
     input[type=text]{
         flex: 4;
         text-align: left;
         border-bottom: 2px solid $darkRed;
+        @media (max-width:855px){
+            width: 80%;
+        }
 
     }
+}
 
     text-align: center;
+    .searchButtonWrapper{
+        display: flex;
+        flex: 0.5;
+        justify-content: left;
+
+    }
     .searchButton{
-        border-radius: 2vw;
+        border-radius: 100px;
         margin-left: 5px;
-        width: 2vw;
-        height: 2vw;
-        flex: 0;
+        width: 40px;
+        height: 40px;
         border: 2px solid $darkRed;
+        flex: 0;
+        padding: 0;
+        font-size: unset;
 
         div{
-            width: 2vw;
-            height: 2vw;
-            padding-top: 3.5px;
+            width: 40px;
+            height: 40px;
+            padding-left: 6px;
+            padding-top: 5px;
+            flex: 0;
+            @media (max-width:855px){
+                padding-left: 6px;
+            }
         }
 
     }
@@ -46,11 +72,11 @@
 
     .extraOptions{
         flex: 2;
-        margin-left: 40px;
         display: flex;
 
         button{
             margin: 0 5px;
+            font-size: 20px;
             font-weight: 500; //We'll see if this weight looks good inverted, otherwise set to 600 I guess
         }
     }

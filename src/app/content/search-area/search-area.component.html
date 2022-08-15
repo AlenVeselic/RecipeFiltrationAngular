@@ -1,13 +1,21 @@
 <div class="searchWrapper">
     <div class="searchBar">
+        <div>
         <input type="text" placeholder="search anything" #searchBar>
+        <div class="searchButtonWrapper">
+            <button class="searchButton">
+                <div>
+                    <fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1" (click)="setQuery(searchBar.value)">
 
-        <button class="searchButton"><div><fa-icon [icon]="faMaGlass" size="lg" transform="shrink-1 down-1" (click)="setQuery(searchBar.value)"></fa-icon></div></button>
-
+                    </fa-icon>
+                </div>
+            </button>
+        </div>
+    </div>
         <div class="extraOptions">
             <button>Sort by</button>
 
-            <button (click)="toggleAdvancedFilters()">Advanced</button>
+            <button (click)="toggleAdvancedFilters()" [class.selected] = "this.filters">Advanced</button>
         </div>
     </div>
 
