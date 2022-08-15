@@ -15,7 +15,8 @@ div{
 
     overflow:hidden;
 
-    background-color: $recipeCardRed;
+    background-color: $backgroundColor;
+
 }
 
 
@@ -88,6 +89,7 @@ img{
     padding: 5px 10px;
     
     border-top: 1px solid $backgroundColor;
+    background-color: $recipeCardRed;
     
 }
 
@@ -112,4 +114,30 @@ img{
 }
 .foot{
     flex: 1;
+}
+
+.difficulty{
+    text-align: right;
+}
+
+.star-empty::before{
+    content:'\2605';
+
+    color:$backgroundColor;
+}
+
+.star-full::before{
+    content:'\2606';
+
+    color:$backgroundColor;
+}
+
+.star-empty, .star-full{
+    display:inline;
+    flex: 1;
+    height:20px;
+    max-width: 25px;
+    font-size: 25px;
+    line-height: 20px;
+    text-align: right;
 }

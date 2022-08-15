@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Environment } from '../environment/environment';
 import { FilterService } from '../services/filter.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class RecipeCardComponent implements OnInit {
 
   displayedPreparationType = "";
   displayedIngredient = "";
+  difficultyRange = Environment.difficultyRange;
 
   constructor(private router: Router,
               private filterService: FilterService) { 

@@ -11,7 +11,14 @@
     <div class="content">
         <div class="header">
             <div class="name">{{this.recipe.ime}}</div>
-            <div class="difficulty"><p>{{this.recipe.zahtevnost.naziv}}</p></div>
+            <div>
+                <div *ngIf="this.recipe.zahtevnost" class="difficulty">
+                    <ng-container *ngFor="let i of difficultyRange">
+                        <div *ngIf="i >= recipe.zahtevnost.idzahtevnosti" class="star-full"></div>
+                        <div *ngIf="i < recipe.zahtevnost.idzahtevnosti" class="star-empty"></div>
+                    </ng-container>
+                </div>
+            </div>
         </div>
         <div class="tags">
             <span *ngIf="this.recipe.priprave && this.recipe.priprave.length > 0 && this.recipe.priprave[0].naziv != ''">{{this.displayedPreparationType}}</span> <span *ngIf="this.recipe.sestavine && this.recipe.sestavine.length > 0">{{this.displayedIngredient}}</span>
