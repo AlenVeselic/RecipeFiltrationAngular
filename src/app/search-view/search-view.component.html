@@ -3,6 +3,9 @@
         <app-search-area></app-search-area>
         <app-selected-filters></app-selected-filters>
         <app-result-grid></app-result-grid>
+        <div class="loadMoreWrapper">
+            <button (click)="this.loadMore()" *ngIf="this.currentPage < this.numberOfPages">Load more</button>
+        </div>
     </div>
 </div>
 

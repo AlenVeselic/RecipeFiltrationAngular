@@ -28,7 +28,7 @@ export class ResultGridComponent implements OnInit {
   ngOnInit(): void {
     console.log("Sending request")
     if(this.phpRecipes.length === 0){
-      this.filterService.search()
+      this.filterService.search(false)
     }
     for(let recipe of this.phpRecipes) console.log(recipe.ime)
   }

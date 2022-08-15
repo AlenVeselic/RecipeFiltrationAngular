@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../services/filter.service';
+import { PaginationService } from '../services/pagination.service';
 
 @Component({
   selector: 'app-search-view',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchViewComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private filterService: FilterService
+  ) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  loadMore(){
+    this.filterService.search(true)
   }
 
 }

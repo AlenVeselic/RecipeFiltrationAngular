@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { PaginationService } from './pagination.service';
 
 export enum filterTypes {
   preparationType,
@@ -18,11 +19,18 @@ export class FilterService {
   ingredients: string[] = [];
   difficultyLevel: string[] = [""];
   searchQuery: string = ""
-  private recipes = new Subject<any>()
+  currentRecipes: Object[] = [];
+  currentPage: number = 0
+  private recipes = new BehaviorSubject<Object[]>(this.currentRecipes)
   private activeFilters = new Subject<any>()
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private pagination: PaginationService
+              ) 
+              {
+                this.pagination.getCurrentPageNumber().subscribe(pageNumber => this.currentPage = pageNumber)
+              }
 
   setFilter(type: filterTypes, filterValue: string){
     switch(type){
@@ -65,9 +73,9 @@ export class FilterService {
       }
     }
 
-    this.search()
+    this.search(false)
   }
-  search(){
+  search(addToRecipes: boolean){
     let body: any = {}
     body.preparationTypes = this.preparationTypes.length > 0 ? this.preparationTypes : [""];
     body.ingredients = this.ingredients.length > 0 ? this.ingredients : [""];
@@ -76,10 +84,21 @@ export class FilterService {
     let recipes: any = {}
     console.log(body)
     this.activeFilters.next(body);
-    this.http.post("http://localhost:8000/api/v1/recipes/search", body).subscribe(response => {
+    let searchUrl = "http://localhost:8000/api/v1/recipes/search"
+    if(addToRecipes) searchUrl += `?page=${this.currentPage + 1}`
+    this.http.post(searchUrl, body).subscribe(response => {
       recipes = response
       console.log(response)
-      this.recipes.next(recipes)
+      if(addToRecipes){
+        this.getRecipeUpdate().subscribe(current => this.currentRecipes = current)
+        this.recipes.next([...this.currentRecipes,...recipes.data])
+        this.pagination.setCurrentPageNumber(this.currentPage + 1)
+            
+      }
+      else{ 
+        this.recipes.next(recipes.data)
+        this.pagination.setNumberOfPages(recipes.last_page)
+      }
     })
   }
 
