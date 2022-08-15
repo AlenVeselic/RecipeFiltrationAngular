@@ -78,11 +78,33 @@ div.flex{
   display: flex;
 }
 
+button, input{
+  all: unset;
+}
+
+button{
+  border: 2px solid $darkRed;
+  border-radius: 10px;
+  color: $darkRed;
+  font-weight: 500;
+  font-family: $baseFont;
+  font-size: 17px;
+  padding: 3px 0;
+  padding-left: 8px;
+  padding-right: 6px;
+}
+
 .selected{
   background-color: $darkRed;
   color: $contentTextColor;
   border: 1px transparent solid;
   border-radius: 100px;
+}
+
+button:active{
+  @extend .selected;
+  border: 2px solid $darkRed;
+  border-radius: 10px;
 }
 
 .filterTitle{
