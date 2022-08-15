@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap} from '@angular/router';
+import { Environment } from '../environment/environment';
 
 @Component({
   selector: 'app-recipe-view',
@@ -12,7 +13,7 @@ export class RecipeViewComponent implements OnInit {
   recipeId:any = {}
   recipe:any = {}
   navodila: string = ""
-  difficultyRange: number[] = Array(4).fill(0).map((x,i) => 3 - i)
+  difficultyRange: number[] = Environment.difficultyRange;
 
   constructor(private route: ActivatedRoute,
               private http: HttpClient) { }
