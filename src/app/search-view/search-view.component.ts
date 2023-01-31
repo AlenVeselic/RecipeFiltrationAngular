@@ -9,10 +9,13 @@ import { PaginationService } from '../services/pagination.service';
 })
 export class SearchViewComponent implements OnInit {
 
-
+  currentPage: number = 1;
+  numberOfPages: number = 0;
   constructor(
-    private filterService: FilterService
+    private filterService: FilterService, public pagination: PaginationService
   ) { 
+    pagination.getCurrentPageNumber().subscribe(currentPage => this.currentPage = currentPage)
+    pagination.getNumberOfPages().subscribe(numberOfPages => this.numberOfPages = numberOfPages)
   }
 
   ngOnInit(): void {
