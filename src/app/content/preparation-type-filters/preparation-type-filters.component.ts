@@ -6,30 +6,30 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-preparation-type-filters',
   templateUrl: './preparation-type-filters.component.html',
-  styleUrls: ['./preparation-type-filters.component.scss']
+  styleUrls: ['./preparation-type-filters.component.scss'],
 })
 export class PreparationTypeFiltersComponent implements OnInit {
   preparationTypes: any = null;
-  selected: number[] =  [];
+  selected: number[] = [];
 
-  constructor(private http: HttpClient,
-              public filterService: FilterService) {}
+  constructor(private http: HttpClient, public filterService: FilterService) {}
 
   ngOnInit(): void {
-    this.http.get(`${environment.api_url}/api/v1/preparation-types`).subscribe(p => {
-      this.preparationTypes = p
-    })
+    const allPreparationTypesUrl = `${environment.api_url}/api/v1/preparation-types`;
+
+    this.http.get(allPreparationTypesUrl).subscribe((p) => {
+      this.preparationTypes = p;
+    });
   }
 
-  setPreparationType(preparationType: string){
-    this.filterService.setFilter(filterTypes.preparationType, preparationType)
+  setPreparationType(preparationType: string) {
+    this.filterService.setFilter(filterTypes.preparationType, preparationType);
   }
 
-  select(event: MouseEvent){
+  select(event: MouseEvent) {
     const target = event.target as HTMLParagraphElement;
-    if(event != null && event.target!= null){
+    if (event != null && event.target != null) {
       target.classList.toggle('selected');
     }
   }
-
 }
