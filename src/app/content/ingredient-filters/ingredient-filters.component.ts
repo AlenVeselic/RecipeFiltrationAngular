@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FilterService, filterTypes } from 'src/app/services/filter.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ingredient-filters',
@@ -16,7 +17,7 @@ export class IngredientFiltersComponent implements OnInit {
               public filterService: FilterService) { }
 
   ngOnInit(): void {
-    this.http.get("http://localhost:8000/api/v1/ingredients").subscribe(i => {
+    this.http.get(`${environment.api_url}/api/v1/ingredients`).subscribe(i => {
       this.ingredients = i
     })
   }

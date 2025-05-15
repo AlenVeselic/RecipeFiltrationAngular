@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { PaginationService } from './pagination.service';
 
 export enum filterTypes {
@@ -84,7 +85,7 @@ export class FilterService {
     let recipes: any = {}
     console.log(body)
     this.activeFilters.next(body);
-    let searchUrl = "http://localhost:8000/api/v1/recipes/search"
+    let searchUrl = `${environment.api_url}/api/v1/recipes/search`
     if(addToRecipes) searchUrl += `?page=${this.currentPage + 1}`
     this.http.post(searchUrl, body).subscribe(response => {
       recipes = response
